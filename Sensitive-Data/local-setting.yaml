@@ -15,9 +15,6 @@ requests:
       - '{{BaseURL}}/local_settings.py'
     stop-at-first-match: true
     matchers:
-      - type: status
-        status:
-          - 200
       - type: word
         part: body
         words:
