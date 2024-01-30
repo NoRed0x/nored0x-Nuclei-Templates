@@ -13,7 +13,7 @@ requests:
   - method: GET
     path:
       - '{{BaseURL}}/local_settings.py'
-    matchers-condition: or
+    stop-at-first-match: true
     matchers:
       - type: status
         status:
