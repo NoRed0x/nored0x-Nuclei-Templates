@@ -24,7 +24,6 @@ http:
         words:
           - laravel
           - framework
-          - DOCTYPE
           
       - type: status
         status:
