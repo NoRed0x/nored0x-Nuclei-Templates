@@ -1,0 +1,27 @@
+id: github-workflows-push
+info:
+  name: Detect GitHub Actions Workflow Sensitive Information Exposure
+  author: nored0x
+  severity: high
+  description: |
+    Detects exposure of sensitive information (SECRETS, passwords, API keys, TOKENS) in GitHub Actions workflow files.
+  tags:
+    - sensitive-information
+    - github-actions
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/.github/workflows/push.yml'
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'USER'
+          - 'PASSWORD'
+          - 'postgresql'
+          - 'mysql'
+          - 'SECRET'
+          - 'services'
+          - 'TOKEN'
