@@ -11,10 +11,10 @@ requests:
   - method: GET
     path:
       - '{{BaseURL}}/servudaemon.ini'
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body
-        condition: or
         words:
           - 'LocalSetupPassword'
           - '[GLOBAL]'
